@@ -41,71 +41,105 @@ const updateValues = (elements, watchedState) => {
 const init = () => {
   // MODEL
   const elements = {
-    form: document.forms.calcHowMuch,
-    // results detail
-    resultMonthlyPI: document.querySelectorAll('[data-calc-result="monthly-pi"]'),
-    resultMonthlyRealTaxes: document.querySelectorAll('[data-calc-result="monthly-real-taxes"]'),
-    resultMonthlyInsurance: document.querySelectorAll('[data-calc-result="monthly-insurance"]'),
-    resultLoanValRatio: document.querySelectorAll('[data-calc-result="loan-value-ratio"]'),
-    resultMonthWithPMI: document.querySelectorAll('[data-calc-result="month-with-pmi"]'),
-    resultMonthlyPMI: document.querySelectorAll('[data-calc-result="monthly-pmi"]'),
-
-    // results detail in text
-    resultAmount: document.querySelector('[data-calc-result="amount"]'),
-    resultLengthYears: document.querySelector('[data-calc-result="length-years"]'),
-    resultInterestRate: document.querySelector('[data-calc-result="interest-rate"]'),
+    form: document.forms.calculatorRentBuy,
+    // values
+    resultMonthlyRent: document.querySelectorAll('[data-calc-result="monthly-rent"]'),
+    resultAnnualRentIncrease: document.querySelectorAll('[data-calc-result="annual-rent-increase"]'),
+    resultAnnualMaintenance: document.querySelectorAll('[data-calc-result="annual-maintenance"]'),
+    resultAnnualAppreciation: document.querySelectorAll('[data-calc-result="annual-appreciation"]'),
     resultHomeValue: document.querySelector('[data-calc-result="home-value"]'),
-    resultAnnualTaxes: document.querySelector('[data-calc-result="annual-taxes"]'),
-    resultAnnualInsurance: document.querySelector('[data-calc-result="annual-insurance"]'),
+    resultYearsBefore: document.querySelectorAll('[data-calc-result="years-before"]'),
+    resultSellingCost: document.querySelectorAll('[data-calc-result="selling-cost"]'),
+    resultAmount: document.querySelectorAll('[data-calc-result="amount"]'),
+    resultInterestRate: document.querySelectorAll('[data-calc-result="interest-rate"]'),
+    resultTerm: document.querySelectorAll('[data-calc-result="term"]'),
+    resultPoints: document.querySelectorAll('[data-calc-result="points"]'),
+    resultYourTaxRate: document.querySelectorAll('[data-calc-result="your-tax-rate"]'),
+    resultAnnualTax: document.querySelectorAll('[data-calc-result="annual-tax"]'),
+    resultAnnualInsurance: document.querySelectorAll('[data-calc-result="annual-insurance"]'),
+    resultAnnualPmi: document.querySelectorAll('[data-calc-result="annual-pmi"]'),
 
-    // total result
-    resultMonthlyPayment: document.querySelectorAll('[data-calc-result="monthly-payment"]'),
+    // first
+    resultTaxesInsuranceRent: document.querySelectorAll('[data-calc-result="taxes-insurance-rent"]'),
+    resultTaxesInsuranceBuy: document.querySelectorAll('[data-calc-result="taxes-insurance-buy"]'),
+    resultPmiRent: document.querySelectorAll('[data-calc-result="pmi-rent"]'),
+    resultPmiBuy: document.querySelectorAll('[data-calc-result="pmi-buy"]'),
+    resultMaintenanceRent: document.querySelectorAll('[data-calc-result="maintenance-rent"]'),
+    resultMaintenanceBuy: document.querySelectorAll('[data-calc-result="maintenance-buy"]'),
+    resultTotalPaymentsRent: document.querySelectorAll('[data-calc-result="total-payments-rent"]'),
+    resultTotalPaymentsBuy: document.querySelectorAll('[data-calc-result="total-payments-buy"]'),
 
-    // switchers
-    switchTaxes: document.querySelectorAll('[data-switch="switch-taxes"]'),
-    switchInsurance: document.querySelectorAll('[data-switch="switch-insurance"]'),
-    switchPmi: document.querySelectorAll('[data-switch="switch-pmi"]'),
+    // second
+    resultAverageMonthlyRent: document.querySelectorAll('[data-calc-result="average-monthly-rent"]'),
+    resultAverageMonthlyBuy: document.querySelectorAll('[data-calc-result="average-monthly-buy"]'),
+    resultMonthlyRentSavings: document.querySelectorAll('[data-calc-result="monthly-rent-savings"]'),
+    resultTaxSavingsRent: document.querySelectorAll('[data-calc-result="tax-savings-rent"]'),
+    resultTaxSavingsBuy: document.querySelectorAll('[data-calc-result="tax-savings-buy"]'),
+    resultTotalRentSavings: document.querySelectorAll('[data-calc-result="total-rent-savings"]'),
 
-    // pmi show if result
-    showPmi: document.querySelectorAll('[data-exclude="no-pmi"]'),
+    // third
+    resultHouseAppreciationValue: document.querySelectorAll('[data-calc-result="house-appreciation-value"]'),
+    resultProceedsMinusCosts: document.querySelectorAll('[data-calc-result="proceeds-minus-costs"]'),
+    resultLoanBalance: document.querySelectorAll('[data-calc-result="loan-balance"]'),
+    resultEquityAppreciation: document.querySelectorAll('[data-calc-result="equity-appreciation"]'),
+    resultHomePurchaseBenefits: document.querySelectorAll('[data-calc-result="home-purchase-benefits"]')
   };
   // MODEL
   const state = {
     form: {
       values: {
         // input values
-        amount: 0,
-        'interest-rate': 0,
-        'length-years': 0,
+        'monthly-rent': 0,
+        'annual-rent-increase': 0,
+        'annual-maintenance': 0,
+        'annual-appreciation': 0,
         'home-value': 0,
+        'years-before': 0,
+        'selling-cost': 0,
+        'amount': 0,
+        'interest-rate': 0,
+        'term': 0,
+        'points': 0,
+        'your-tax-rate': 0,
         'annual-tax': 0,
         'annual-insurance': 0,
         'annual-pmi': 0,
       },
       exclude: {
+        'switch-tax-rate': '%',
         'switch-taxes': '$',
         'switch-insurance': '$',
         'switch-pmi': '%',
       },
     },
     result: {
-      // results
-      'monthly-pi': null,
-      'monthly-real-taxes': null,
-      'monthly-insurance': null,
-      'loan-value-ratio': null,
-      'month-with-pmi': null,
-      'monthly-pmi': null,
-      // res details
-      amount: null,
-      'interest-rate': null,
-      'length-years': null,
-      'home-value': null,
-      'annual-tax': null,
-      'annual-insurance': null,
-      'annual-pmi': null,
+      // first
+      'taxes-insurance-rent': null,
+      'taxes-insurance-buy': null,
+      'pmi-rent': null,
+      'pmi-buy': null,
+      'maintenance-rent': null,
+      'maintenance-buy': null,
       // total
-      'monthly-payment': null,
+      'total-payments-rent': null,
+      'total-payments-buy': null,
+
+      // second
+      'average-monthly-rent': null,
+      'average-monthly-buy': null,
+      'monthly-rent-savings': null,
+      'tax-savings-rent': null,
+      'tax-savings-buy': null,
+      // total
+      'total-rent-savings': null,
+
+      // third
+      'house-appreciation-value': null,
+      'proceeds-minus-costs': null,
+      'loan-balance': null,
+      'equity-appreciation': null,
+      // total
+      'home-purchase-benefits': null
     },
   };
 

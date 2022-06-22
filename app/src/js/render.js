@@ -1,161 +1,315 @@
 // VIEW
 const renderFormatLocale = (resultValue) => resultValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
 
-// render details
+// render details functions
+
+const renderMonthlyRent = (elements, watchedState) => {
+  const { resultMonthlyRent } = elements;
+  const { result } = watchedState;
+  resultMonthlyRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['monthly-rent']);
+  });
+};
+const renderAnnualRentIncrease = (elements, watchedState) => {
+  const { resultAnnualRentIncrease } = elements;
+  const { result } = watchedState;
+
+  resultAnnualRentIncrease.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['annual-rent-increase']);
+  });
+};
+const renderTotalPaymentsRent = (elements, watchedState) => {
+  const { resultTotalPaymentsRent } = elements;
+  const { result } = watchedState;
+
+  resultTotalPaymentsRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['total-payments-rent']);
+  });
+};
+const renderTotalPaymentsBuy = (elements, watchedState) => {
+  const { resultTotalPaymentsBuy } = elements;
+  const { result } = watchedState;
+
+  resultTotalPaymentsBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['total-payments-buy']);
+  });
+};
+const renderYearsBefore = (elements, watchedState) => {
+  const { resultYearsBefore } = elements;
+  const { result } = watchedState;
+
+  resultYearsBefore.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = result['years-before'];
+  });
+};
 const renderAmount = (elements, watchedState) => {
   const { resultAmount } = elements;
   const { result } = watchedState;
-  if (resultAmount !== null && resultAmount !== undefined) {
-    resultAmount.innerHTML = renderFormatLocale(result.amount);
-  }
-};
 
-const renderLengthYears = (elements, watchedState) => {
-  const { resultLengthYears } = elements;
-  const { result } = watchedState;
-  if (resultLengthYears !== null && resultLengthYears !== undefined) {
-    resultLengthYears.innerHTML = result['length-years'];
-  }
+  resultAmount.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['amount']);
+  });
 };
-
 const renderInterestRate = (elements, watchedState) => {
   const { resultInterestRate } = elements;
   const { result } = watchedState;
-  if (resultInterestRate !== null && resultInterestRate !== undefined) {
-    resultInterestRate.innerHTML = renderFormatLocale(result['interest-rate']);
-  }
-};
 
-const renderHomeValue = (elements, watchedState) => {
-  const { resultHomeValue } = elements;
+  resultInterestRate.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['interest-rate']);
+  });
+};
+const renderAnnualMaintenance = (elements, watchedState) => {
+  const { resultAnnualMaintenance } = elements;
   const { result } = watchedState;
-  if (resultHomeValue !== null && resultHomeValue !== undefined) {
-    resultHomeValue.innerHTML = renderFormatLocale(result['home-value']);
-  }
-};
 
-const renderAnnualTaxes = (elements, watchedState) => {
-  const { resultAnnualTaxes } = elements;
+  resultAnnualMaintenance.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['annual-maintenance']);
+  });
+};
+const renderTaxesInsuranceRent = (elements, watchedState) => {
+  const { resultTaxesInsuranceRent } = elements;
   const { result } = watchedState;
-  if (resultAnnualTaxes !== null && resultAnnualTaxes !== undefined) {
-    resultAnnualTaxes.innerHTML = renderFormatLocale(result['annual-tax']);
-  }
+
+  resultTaxesInsuranceRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['taxes-insurance-rent']);
+  });
+};
+const renderTaxesInsuranceBuy = (elements, watchedState) => {
+  const { resultTaxesInsuranceBuy } = elements;
+  const { result } = watchedState;
+
+  resultTaxesInsuranceBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['taxes-insurance-buy']);
+  });
+};
+const renderMaintenanceRent = (elements, watchedState) => {
+  const { resultMaintenanceRent } = elements;
+  const { result } = watchedState;
+
+  resultMaintenanceRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['maintenance-rent']);
+  });
+};
+const renderMaintenanceBuy = (elements, watchedState) => {
+  const { resultMaintenanceBuy } = elements;
+  const { result } = watchedState;
+
+  resultMaintenanceBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['maintenance-buy']);
+  });
+};
+const renderPmiRent = (elements, watchedState) => {
+  const { resultPmiRent } = elements;
+  const { result } = watchedState;
+
+  resultPmiRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['pmi-rent']);
+  });
+};
+const renderPmiBuy = (elements, watchedState) => {
+  const { resultPmiBuy } = elements;
+  const { result } = watchedState;
+
+  resultPmiBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['pmi-buy']);
+  });
 };
 
-const renderAnnualInsurance = (elements, watchedState) => {
+const renderAverageMonthlyRent = (elements, watchedState) => {
+  const { resultAverageMonthlyRent } = elements;
+  const { result } = watchedState;
+
+  resultAverageMonthlyRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['average-monthly-rent']);
+  });
+};
+const renderAverageMonthlyBuy = (elements, watchedState) => {
+  const { resultAverageMonthlyBuy } = elements;
+  const { result } = watchedState;
+
+  resultAverageMonthlyBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['average-monthly-buy']);
+  });
+};
+const renderMonthlyRentSavings = (elements, watchedState) => {
+  const { resultMonthlyRentSavings } = elements;
+  const { result } = watchedState;
+
+  resultMonthlyRentSavings.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['monthly-rent-savings']);
+  });
+};
+const renderHouseAppreciationValue = (elements, watchedState) => {
+  const { resultHouseAppreciationValue } = elements;
+  const { result } = watchedState;
+
+  resultHouseAppreciationValue.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['house-appreciation-value']);
+  });
+};
+const renderLoanBalance = (elements, watchedState) => {
+  const { resultLoanBalance } = elements;
+  const { result } = watchedState;
+
+  resultLoanBalance.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['loan-balance']);
+  });
+};
+const renderProceedsMinusCosts = (elements, watchedState) => {
+  const { resultProceedsMinusCosts } = elements;
+  const { result } = watchedState;
+
+  resultProceedsMinusCosts.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['proceeds-minus-costs']);
+  });
+};
+
+const renderEquityAppreciation = (elements, watchedState) => {
+  const { resultEquityAppreciation } = elements;
+  const { result } = watchedState;
+
+  resultEquityAppreciation.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['equity-appreciation']);
+  });
+};
+const renderTaxSavingsRent = (elements, watchedState) => {
+  const { resultTaxSavingsRent } = elements;
+  const { result } = watchedState;
+
+  resultTaxSavingsRent.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['tax-savings-rent']);
+  });
+};
+const renderTaxSavingsBuy = (elements, watchedState) => {
+  const { resultTaxSavingsBuy } = elements;
+  const { result } = watchedState;
+
+  resultTaxSavingsBuy.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['tax-savings-buy']);
+  });
+};
+const renderTotalRentSavings = (elements, watchedState) => {
+  const { resultTotalRentSavings } = elements;
+  const { result } = watchedState;
+
+  resultTotalRentSavings.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['total-rent-savings']);
+  });
+};
+const renderHomePurchaseBenefits = (elements, watchedState) => {
+  const { resultHomePurchaseBenefits } = elements;
+  const { result } = watchedState;
+
+  resultHomePurchaseBenefits.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['home-purchase-benefits']);
+  });
+};
+
+const renderYourTaxRate = (elements, watchedState) => {
+  const { resultYourTaxRate } = elements;
+  const { result } = watchedState;
+
+  resultYourTaxRate.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['your-tax-rate']);
+  });
+};
+const renderAnnualTaxResult = (elements, watchedState) => {
+  const { resultAnnualTax } = elements;
+  const { result } = watchedState;
+
+  resultAnnualTax.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['annual-tax']);
+  });
+};
+const renderAnnualInsuranceResult = (elements, watchedState) => {
   const { resultAnnualInsurance } = elements;
   const { result } = watchedState;
-  if (resultAnnualInsurance !== null && resultAnnualInsurance !== undefined) {
-    resultAnnualInsurance.innerHTML = renderFormatLocale(result['annual-insurance']);
-  }
+
+  resultAnnualInsurance.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['annual-insurance']);
+  });
+};
+const renderAnnualAppreciationResult = (elements, watchedState) => {
+  const { resultAnnualAppreciation } = elements;
+  const { result } = watchedState;
+
+  resultAnnualAppreciation.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['annual-appreciation']);
+  });
+};
+const renderSellingCostResult = (elements, watchedState) => {
+  const { resultSellingCost } = elements;
+  const { result } = watchedState;
+
+  resultSellingCost.forEach((resultItem) => {
+    const elem = resultItem;
+    elem.innerHTML = renderFormatLocale(result['selling-cost']);
+  });
 };
 
-const renderMonthlyTaxes = (elements, watchedState) => {
-  const { resultMonthlyRealTaxes } = elements;
-  const { result } = watchedState;
-  if (resultMonthlyRealTaxes !== null && resultMonthlyRealTaxes !== undefined) {
-    resultMonthlyRealTaxes.forEach((resultItem) => {
-      const item = resultItem;
-      item.innerHTML = renderFormatLocale(result['monthly-real-taxes']);
-    });
-  }
-};
-
-const renderMonthlyInsurance = (elements, watchedState) => {
-  const { resultMonthlyInsurance } = elements;
-  const { result } = watchedState;
-  if (resultMonthlyInsurance !== null && resultMonthlyInsurance !== undefined) {
-    resultMonthlyInsurance.forEach((resultItem) => {
-      const item = resultItem;
-      item.innerHTML = renderFormatLocale(result['monthly-insurance']);
-    });
-  }
-};
-
-const renderMonthlyPMI = (elements, watchedState) => {
-  const { resultMonthlyPMI } = elements;
-  const { result } = watchedState;
-  if (resultMonthlyPMI !== null && resultMonthlyPMI !== undefined) {
-    resultMonthlyPMI.forEach((totalItem) => {
-      const item = totalItem;
-      item.innerHTML = renderFormatLocale(result['monthly-pmi']);
-    });
-  }
-};
-
-const renderMonthWithPMI = (elements, watchedState) => {
-  const { resultMonthWithPMI } = elements;
-  const { result } = watchedState;
-  if (resultMonthWithPMI !== null && resultMonthWithPMI !== undefined) {
-    resultMonthWithPMI.forEach((totalItem) => {
-      const item = totalItem;
-      item.innerHTML = result['month-with-pmi'];
-    });
-  }
-};
-
-const renderValueRatio = (elements, watchedState) => {
-  const { resultLoanValRatio, showPmi } = elements;
-  const { result } = watchedState;
-  if (resultLoanValRatio !== null && resultLoanValRatio !== undefined) {
-    resultLoanValRatio.forEach((resultItem) => {
-      const item = resultItem;
-      if (result['loan-value-ratio'] > 80) {
-        showPmi.forEach((elem) => {
-          const e = elem;
-          e.style.display = 'flex';
-        });
-        item.innerHTML = renderFormatLocale(result['loan-value-ratio']);
-      } else if (result['loan-value-ratio'] < 80) {
-        showPmi.forEach((elem) => {
-          const e = elem;
-          e.style.display = 'none';
-        });
-      }
-    });
-  }
-};
-
-// total monthly PI
-const renderMonthlyPI = (elements, watchedState) => {
-  const { resultMonthlyPI } = elements;
-  const { result } = watchedState;
-  if (resultMonthlyPI !== null && resultMonthlyPI !== undefined) {
-    resultMonthlyPI.forEach((totalItem) => {
-      const item = totalItem;
-      item.innerHTML = renderFormatLocale(result['monthly-pi']);
-    });
-  }
-};
-
-// total monthly payment
-const renderMonthlyPayment = (elements, watchedState) => {
-  const { resultMonthlyPayment } = elements;
-  const { result } = watchedState;
-  if (resultMonthlyPayment !== null && resultMonthlyPayment !== undefined) {
-    resultMonthlyPayment.forEach((totalItem) => {
-      const item = totalItem;
-      item.innerHTML = renderFormatLocale(result['monthly-payment']);
-    });
-  }
-};
 
 export const render = (elements, watchedState) => {
-  // renders results detail
+  // renders results
+  renderMonthlyRent(elements, watchedState);
+  renderAnnualRentIncrease(elements, watchedState);
+  renderTotalPaymentsRent(elements, watchedState);
+  renderTotalPaymentsBuy(elements, watchedState);
+  renderYearsBefore(elements, watchedState);
   renderAmount(elements, watchedState);
-  renderLengthYears(elements, watchedState);
   renderInterestRate(elements, watchedState);
-  renderHomeValue(elements, watchedState);
-  renderAnnualTaxes(elements, watchedState);
-  renderAnnualInsurance(elements, watchedState);
-  renderMonthlyTaxes(elements, watchedState);
-  renderMonthlyInsurance(elements, watchedState);
-  renderValueRatio(elements, watchedState);
-  // total monthly PMI
-  renderMonthlyPMI(elements, watchedState);
-  renderMonthWithPMI(elements, watchedState);
-  // total monthly PI
-  renderMonthlyPI(elements, watchedState);
-  // total monthly payment
-  renderMonthlyPayment(elements, watchedState);
+  renderAnnualMaintenance(elements, watchedState);
+  renderTaxesInsuranceRent(elements, watchedState);
+  renderTaxesInsuranceBuy(elements, watchedState);
+  renderMaintenanceRent(elements, watchedState);
+  renderMaintenanceBuy(elements, watchedState);
+  renderPmiRent(elements, watchedState);
+  renderPmiBuy(elements, watchedState);
+  renderAverageMonthlyRent(elements, watchedState);
+  renderAverageMonthlyBuy(elements, watchedState);
+  renderMonthlyRentSavings(elements, watchedState);
+  renderHouseAppreciationValue(elements, watchedState);
+  renderLoanBalance(elements, watchedState);
+  renderProceedsMinusCosts(elements, watchedState);
+  renderEquityAppreciation(elements, watchedState);
+  renderTaxSavingsRent(elements, watchedState);
+  renderTaxSavingsBuy(elements, watchedState);
+  renderTotalRentSavings(elements, watchedState);
+  renderHomePurchaseBenefits(elements, watchedState);
+
+  renderYourTaxRate(elements, watchedState);
+  renderAnnualTaxResult(elements, watchedState);
+  renderAnnualInsuranceResult(elements, watchedState);
+  renderAnnualAppreciationResult(elements, watchedState);
+  renderSellingCostResult(elements, watchedState);
+
+
 };

@@ -149,7 +149,9 @@
   }
   input {
     outline: none;
-    cursor: pointer;
+    &[type="submit"]{
+      cursor: pointer;
+    }
   }
   @media (max-width: 61.9375rem) {
     &__inner-line {
