@@ -2,7 +2,6 @@
 const renderFormatLocale = (resultValue) => resultValue.toLocaleString('en-US', { minimumFractionDigits: 2 });
 
 // render details functions
-
 const renderMonthlyRent = (elements, watchedState) => {
   const { resultMonthlyRent } = elements;
   const { result } = watchedState;
@@ -11,6 +10,7 @@ const renderMonthlyRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['monthly-rent']);
   });
 };
+
 const renderAnnualRentIncrease = (elements, watchedState) => {
   const { resultAnnualRentIncrease } = elements;
   const { result } = watchedState;
@@ -20,6 +20,7 @@ const renderAnnualRentIncrease = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['annual-rent-increase']);
   });
 };
+
 const renderTotalPaymentsRent = (elements, watchedState) => {
   const { resultTotalPaymentsRent } = elements;
   const { result } = watchedState;
@@ -29,6 +30,7 @@ const renderTotalPaymentsRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['total-payments-rent']);
   });
 };
+
 const renderTotalPaymentsBuy = (elements, watchedState) => {
   const { resultTotalPaymentsBuy } = elements;
   const { result } = watchedState;
@@ -38,6 +40,7 @@ const renderTotalPaymentsBuy = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['total-payments-buy']);
   });
 };
+
 const renderYearsBefore = (elements, watchedState) => {
   const { resultYearsBefore } = elements;
   const { result } = watchedState;
@@ -47,15 +50,17 @@ const renderYearsBefore = (elements, watchedState) => {
     elem.innerHTML = result['years-before'];
   });
 };
+
 const renderAmount = (elements, watchedState) => {
   const { resultAmount } = elements;
   const { result } = watchedState;
 
   resultAmount.forEach((resultItem) => {
     const elem = resultItem;
-    elem.innerHTML = renderFormatLocale(result['amount']);
+    elem.innerHTML = renderFormatLocale(result.amount);
   });
 };
+
 const renderInterestRate = (elements, watchedState) => {
   const { resultInterestRate } = elements;
   const { result } = watchedState;
@@ -65,6 +70,7 @@ const renderInterestRate = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['interest-rate']);
   });
 };
+
 const renderAnnualMaintenance = (elements, watchedState) => {
   const { resultAnnualMaintenance } = elements;
   const { result } = watchedState;
@@ -74,6 +80,7 @@ const renderAnnualMaintenance = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['annual-maintenance']);
   });
 };
+
 const renderTaxesInsuranceRent = (elements, watchedState) => {
   const { resultTaxesInsuranceRent } = elements;
   const { result } = watchedState;
@@ -83,6 +90,7 @@ const renderTaxesInsuranceRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['taxes-insurance-rent']);
   });
 };
+
 const renderTaxesInsuranceBuy = (elements, watchedState) => {
   const { resultTaxesInsuranceBuy } = elements;
   const { result } = watchedState;
@@ -92,6 +100,7 @@ const renderTaxesInsuranceBuy = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['taxes-insurance-buy']);
   });
 };
+
 const renderMaintenanceRent = (elements, watchedState) => {
   const { resultMaintenanceRent } = elements;
   const { result } = watchedState;
@@ -101,6 +110,7 @@ const renderMaintenanceRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['maintenance-rent']);
   });
 };
+
 const renderMaintenanceBuy = (elements, watchedState) => {
   const { resultMaintenanceBuy } = elements;
   const { result } = watchedState;
@@ -110,6 +120,7 @@ const renderMaintenanceBuy = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['maintenance-buy']);
   });
 };
+
 const renderPmiRent = (elements, watchedState) => {
   const { resultPmiRent } = elements;
   const { result } = watchedState;
@@ -119,6 +130,7 @@ const renderPmiRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['pmi-rent']);
   });
 };
+
 const renderPmiBuy = (elements, watchedState) => {
   const { resultPmiBuy } = elements;
   const { result } = watchedState;
@@ -138,6 +150,7 @@ const renderAverageMonthlyRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['average-monthly-rent']);
   });
 };
+
 const renderAverageMonthlyBuy = (elements, watchedState) => {
   const { resultAverageMonthlyBuy } = elements;
   const { result } = watchedState;
@@ -147,6 +160,7 @@ const renderAverageMonthlyBuy = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['average-monthly-buy']);
   });
 };
+
 const renderMonthlyRentSavings = (elements, watchedState) => {
   const { resultMonthlyRentSavings } = elements;
   const { result } = watchedState;
@@ -156,6 +170,7 @@ const renderMonthlyRentSavings = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['monthly-rent-savings']);
   });
 };
+
 const renderHouseAppreciationValue = (elements, watchedState) => {
   const { resultHouseAppreciationValue } = elements;
   const { result } = watchedState;
@@ -165,6 +180,7 @@ const renderHouseAppreciationValue = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['house-appreciation-value']);
   });
 };
+
 const renderLoanBalance = (elements, watchedState) => {
   const { resultLoanBalance } = elements;
   const { result } = watchedState;
@@ -174,6 +190,7 @@ const renderLoanBalance = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['loan-balance']);
   });
 };
+
 const renderProceedsMinusCosts = (elements, watchedState) => {
   const { resultProceedsMinusCosts } = elements;
   const { result } = watchedState;
@@ -193,6 +210,7 @@ const renderEquityAppreciation = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['equity-appreciation']);
   });
 };
+
 const renderTaxSavingsRent = (elements, watchedState) => {
   const { resultTaxSavingsRent } = elements;
   const { result } = watchedState;
@@ -202,6 +220,7 @@ const renderTaxSavingsRent = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['tax-savings-rent']);
   });
 };
+
 const renderTaxSavingsBuy = (elements, watchedState) => {
   const { resultTaxSavingsBuy } = elements;
   const { result } = watchedState;
@@ -211,6 +230,7 @@ const renderTaxSavingsBuy = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['tax-savings-buy']);
   });
 };
+
 const renderTotalRentSavings = (elements, watchedState) => {
   const { resultTotalRentSavings } = elements;
   const { result } = watchedState;
@@ -220,6 +240,7 @@ const renderTotalRentSavings = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['total-rent-savings']);
   });
 };
+
 const renderHomePurchaseBenefits = (elements, watchedState) => {
   const { resultHomePurchaseBenefits } = elements;
   const { result } = watchedState;
@@ -239,6 +260,7 @@ const renderYourTaxRate = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['your-tax-rate']);
   });
 };
+
 const renderAnnualTaxResult = (elements, watchedState) => {
   const { resultAnnualTax } = elements;
   const { result } = watchedState;
@@ -248,6 +270,7 @@ const renderAnnualTaxResult = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['annual-tax']);
   });
 };
+
 const renderAnnualInsuranceResult = (elements, watchedState) => {
   const { resultAnnualInsurance } = elements;
   const { result } = watchedState;
@@ -257,6 +280,7 @@ const renderAnnualInsuranceResult = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['annual-insurance']);
   });
 };
+
 const renderAnnualAppreciationResult = (elements, watchedState) => {
   const { resultAnnualAppreciation } = elements;
   const { result } = watchedState;
@@ -266,6 +290,7 @@ const renderAnnualAppreciationResult = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['annual-appreciation']);
   });
 };
+
 const renderSellingCostResult = (elements, watchedState) => {
   const { resultSellingCost } = elements;
   const { result } = watchedState;
@@ -275,7 +300,6 @@ const renderSellingCostResult = (elements, watchedState) => {
     elem.innerHTML = renderFormatLocale(result['selling-cost']);
   });
 };
-
 
 export const render = (elements, watchedState) => {
   // renders results
@@ -304,12 +328,9 @@ export const render = (elements, watchedState) => {
   renderTaxSavingsBuy(elements, watchedState);
   renderTotalRentSavings(elements, watchedState);
   renderHomePurchaseBenefits(elements, watchedState);
-
   renderYourTaxRate(elements, watchedState);
   renderAnnualTaxResult(elements, watchedState);
   renderAnnualInsuranceResult(elements, watchedState);
   renderAnnualAppreciationResult(elements, watchedState);
   renderSellingCostResult(elements, watchedState);
-
-
 };

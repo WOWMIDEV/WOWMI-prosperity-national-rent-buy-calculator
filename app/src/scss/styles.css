@@ -7,7 +7,7 @@
 }
 
 .calc-wrp {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .calc-wrp input {
   outline: none;
@@ -85,7 +85,7 @@
   position: relative;
 }
 .calc-wrp__item .switcher-parent .radio-icon {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 0;
   color: #232323;
   font-style: normal;
@@ -101,13 +101,13 @@
   align-items: center;
   justify-content: center;
 }
-.calc-wrp__item .switcher-parent input[type=radio] {
+.calc-wrp__item .switcher-parent input[type='radio'] {
   left: 0;
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
-.calc-wrp__item .switcher-parent input[type=radio]:checked ~ .radio-icon {
+.calc-wrp__item .switcher-parent input[type='radio']:checked ~ .radio-icon {
   color: #ffffff;
   font-size: 0.75rem;
   line-height: 100%;
@@ -249,7 +249,7 @@
   position: relative;
 }
 .calculator-form__list-item .result.total::before {
-  content: "$";
+  content: '$';
   margin-right: 0.3125em;
   left: 0;
 }
@@ -259,7 +259,7 @@
   padding: 2.5rem;
 }
 .calculator-form__text-result-wrapper .text {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -278,12 +278,12 @@
   position: relative;
 }
 .calculator-form__text-result-wrapper .text p .marker.percent::after {
-  content: "%";
+  content: '%';
   margin-left: 0.125rem;
   right: 0;
 }
 .calculator-form__text-result-wrapper .text p .marker.currency::before {
-  content: "$";
+  content: '$';
   margin-right: 0.125rem;
   left: 0;
 }

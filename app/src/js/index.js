@@ -3,7 +3,6 @@ import calc from './calc';
 import { render } from './render';
 
 // controller
-
 // watch switcher changes
 const updateExclude = (form, watchedState) => {
   const excludesElements = form.querySelectorAll('.switcher');
@@ -59,7 +58,7 @@ const init = () => {
     resultAnnualInsurance: document.querySelectorAll('[data-calc-result="annual-insurance"]'),
     resultAnnualPmi: document.querySelectorAll('[data-calc-result="annual-pmi"]'),
 
-    // first
+    // part 1
     resultTaxesInsuranceRent: document.querySelectorAll('[data-calc-result="taxes-insurance-rent"]'),
     resultTaxesInsuranceBuy: document.querySelectorAll('[data-calc-result="taxes-insurance-buy"]'),
     resultPmiRent: document.querySelectorAll('[data-calc-result="pmi-rent"]'),
@@ -69,7 +68,7 @@ const init = () => {
     resultTotalPaymentsRent: document.querySelectorAll('[data-calc-result="total-payments-rent"]'),
     resultTotalPaymentsBuy: document.querySelectorAll('[data-calc-result="total-payments-buy"]'),
 
-    // second
+    // part 2
     resultAverageMonthlyRent: document.querySelectorAll('[data-calc-result="average-monthly-rent"]'),
     resultAverageMonthlyBuy: document.querySelectorAll('[data-calc-result="average-monthly-buy"]'),
     resultMonthlyRentSavings: document.querySelectorAll('[data-calc-result="monthly-rent-savings"]'),
@@ -77,13 +76,14 @@ const init = () => {
     resultTaxSavingsBuy: document.querySelectorAll('[data-calc-result="tax-savings-buy"]'),
     resultTotalRentSavings: document.querySelectorAll('[data-calc-result="total-rent-savings"]'),
 
-    // third
+    // part 3
     resultHouseAppreciationValue: document.querySelectorAll('[data-calc-result="house-appreciation-value"]'),
     resultProceedsMinusCosts: document.querySelectorAll('[data-calc-result="proceeds-minus-costs"]'),
     resultLoanBalance: document.querySelectorAll('[data-calc-result="loan-balance"]'),
     resultEquityAppreciation: document.querySelectorAll('[data-calc-result="equity-appreciation"]'),
-    resultHomePurchaseBenefits: document.querySelectorAll('[data-calc-result="home-purchase-benefits"]')
+    resultHomePurchaseBenefits: document.querySelectorAll('[data-calc-result="home-purchase-benefits"]'),
   };
+
   // MODEL
   const state = {
     form: {
@@ -96,10 +96,10 @@ const init = () => {
         'home-value': 0,
         'years-before': 0,
         'selling-cost': 0,
-        'amount': 0,
+        amount: 0,
         'interest-rate': 0,
-        'term': 0,
-        'points': 0,
+        term: 0,
+        points: 0,
         'your-tax-rate': 0,
         'annual-tax': 0,
         'annual-insurance': 0,
@@ -120,26 +120,21 @@ const init = () => {
       'pmi-buy': null,
       'maintenance-rent': null,
       'maintenance-buy': null,
-      // total
       'total-payments-rent': null,
       'total-payments-buy': null,
 
-      // second
       'average-monthly-rent': null,
       'average-monthly-buy': null,
       'monthly-rent-savings': null,
       'tax-savings-rent': null,
       'tax-savings-buy': null,
-      // total
       'total-rent-savings': null,
 
-      // third
       'house-appreciation-value': null,
       'proceeds-minus-costs': null,
       'loan-balance': null,
       'equity-appreciation': null,
-      // total
-      'home-purchase-benefits': null
+      'home-purchase-benefits': null,
     },
   };
 
