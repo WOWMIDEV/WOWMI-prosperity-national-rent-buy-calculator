@@ -9,14 +9,8 @@ const updateExclude = (form, watchedState) => {
   const { exclude } = watchedState.form;
 
   [...excludesElements].forEach((excludeItem) => {
-    switch (excludeItem.checked) {
-      case true:
-        exclude[excludeItem.name] = excludeItem.value;
-        break;
-      case false:
-        break;
-      default:
-        break;
+    if (excludeItem.checked) {
+      exclude[excludeItem.name] = excludeItem.value;
     }
   });
 };
@@ -114,27 +108,27 @@ const init = () => {
     },
     result: {
       // first
-      'taxes-insurance-rent': null,
-      'taxes-insurance-buy': null,
-      'pmi-rent': null,
-      'pmi-buy': null,
-      'maintenance-rent': null,
-      'maintenance-buy': null,
-      'total-payments-rent': null,
-      'total-payments-buy': null,
+      'taxes-insurance-rent': 0,
+      'taxes-insurance-buy': 0,
+      'pmi-rent': 0,
+      'pmi-buy': 0,
+      'maintenance-rent': 0,
+      'maintenance-buy': 0,
+      'total-payments-rent': 0,
+      'total-payments-buy': 0,
 
-      'average-monthly-rent': null,
-      'average-monthly-buy': null,
-      'monthly-rent-savings': null,
-      'tax-savings-rent': null,
-      'tax-savings-buy': null,
-      'total-rent-savings': null,
+      'average-monthly-rent': 0,
+      'average-monthly-buy': 0,
+      'monthly-rent-savings': 0,
+      'tax-savings-rent': 0,
+      'tax-savings-buy': 0,
+      'total-rent-savings': 0,
 
-      'house-appreciation-value': null,
-      'proceeds-minus-costs': null,
-      'loan-balance': null,
-      'equity-appreciation': null,
-      'home-purchase-benefits': null,
+      'house-appreciation-value': 0,
+      'proceeds-minus-costs': 0,
+      'loan-balance': 0,
+      'equity-appreciation': 0,
+      'home-purchase-benefits': 0,
     },
   };
 

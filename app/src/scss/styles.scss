@@ -10,6 +10,7 @@ $tablet-S: 36rem; // 576
   font-size: 0.875rem;
   background-color: #94e3ce;
 }
+
 // form how-much calculator
 .calc-wrp {
   font-family: 'Poppins', sans-serif;
@@ -153,6 +154,7 @@ $tablet-S: 36rem; // 576
   }
   input {
     outline: none;
+    color: #000;
     &[type='submit'] {
       cursor: pointer;
     }
@@ -169,7 +171,7 @@ $tablet-S: 36rem; // 576
     margin: 0.5rem;
   }
 }
-// form how-much calculator + webflow styles
+
 .calculator-form {
   &__inputs-wrapper{
     width: 100%;
@@ -234,6 +236,9 @@ $tablet-S: 36rem; // 576
     @media (max-width: $tablet) {
       width: 100%;
     }
+    @media (max-width: $tablet-S) {
+      flex-direction: column;
+    }
   }
   &__result-input {
     height: auto;
@@ -249,7 +254,11 @@ $tablet-S: 36rem; // 576
         width: calc(100%);
       }
       @media (max-width: $tablet) {
-        width: 100%;;
+        width: 100%;
+      }
+      @media (max-width: $tablet-S) {
+        width: 100%;
+        min-width: 100%;
       }
     }
     @media (max-width: $tablet-L) {
@@ -258,6 +267,11 @@ $tablet-S: 36rem; // 576
     }
     @media (max-width: $tablet) {
       width: 48%;
+    }
+    @media (max-width: $tablet-S) {
+      width: 47%;
+      min-width: 47%;
+      padding: 0.75rem;
     }
     .mobile-comment{
       display: none;
@@ -295,6 +309,10 @@ $tablet-S: 36rem; // 576
 
       @media (max-width: $tablet-L) {
         width: 100%;
+      }
+      @media (max-width: $tablet-S) {
+        text-align: left;
+        margin-bottom: 0.3rem;
       }
     }
   }
@@ -463,13 +481,13 @@ $tablet-S: 36rem; // 576
       padding: 1.5rem;
     }
   }
-
   @media (max-width: $tablet-S) {
     .w-tab-link {
       padding: 1.125rem 1.875rem;
     }
   }
 }
+
 .footer {
   &__text {
     text-align: center;
