@@ -1,0 +1,496 @@
+$laptop: 64rem; // 1024
+$tablet-L: 62rem; // 992
+$tablet: 48rem; // 768
+$tablet-S: 36rem; // 576
+
+.header {
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  background-color: #94e3ce;
+}
+
+// form how-much calculator
+.calc-wrp {
+  font-family: 'Poppins', sans-serif;
+  margin: 2.5rem;
+  &__container {
+    width: 90vw;
+    max-width: 62.25rem;
+    margin-right: auto;
+    margin-left: auto;
+    @media (max-width: $laptop) {
+      width: auto;
+      max-width: 62.25rem;
+    }
+  }
+  &__form-block-wrapper {
+    margin-bottom: 0;
+    border-radius: 0.3125rem;
+    box-shadow: 0 4px 80px 0 rgb(0 0 0 / 10%);
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3.75rem;
+    @media (max-width: $tablet) {
+      padding: 2.5rem 0 0;
+    }
+  }
+  &__line {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      padding: 0 1.25rem;
+    }
+  }
+  &__item {
+    width: 22.8%;
+    position: relative;
+    @media (max-width: $tablet-L) {
+      width: 100%;
+      position: relative;
+      &.full-item {
+        width: 100%;
+      }
+    }
+    @media (max-width: $tablet-S) {
+      &.full-item {
+        margin-top: 1.25rem;
+      }
+    }
+    // switchers
+    .switcher-parent {
+      display: flex;
+      align-items: center;
+      background: #eef2f4;
+      border-radius: 2px;
+      padding: 0.125rem;
+      position: absolute;
+      right: 0;
+      top: -0.3125rem;
+      .switcher-label {
+        display: block;
+        margin-bottom: 0;
+        position: relative;
+      }
+      .radio-icon {
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 0;
+        color: #232323;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 100%;
+        background: transparent;
+        transition: all 0.3s;
+        border-radius: 2px;
+        width: 1.5rem;
+        height: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input[type='radio'] {
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        &:checked ~ .radio-icon {
+          color: #ffffff;
+          font-size: 0.75rem;
+          line-height: 100%;
+          background-color: #07becb;
+          transition: all 0.3s;
+        }
+      }
+      .radio-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .calculator-from {
+      &__header {
+        margin-bottom: 1.875rem;
+      }
+      &__input {
+        color: #333333;
+      }
+    }
+  }
+  &__inner-line {
+    display: flex;
+    align-items: self-end;
+    gap: 1.25rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  &__btn-calc {
+    margin-top: 1.875rem;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    height: 3.5rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+    transition: all 300ms ease;
+  }
+  &__header {
+    color: #07becb;
+    font-size: 1.125rem;
+    line-height: 140%;
+    margin-bottom: 1.5rem;
+  }
+  input {
+    outline: none;
+    color: #000;
+    &[type='submit'] {
+      cursor: pointer;
+    }
+  }
+  @media (max-width: $tablet-L) {
+    &__inner-line {
+      flex-wrap: wrap;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  @media (max-width: $tablet) {
+    margin: 0.5rem;
+  }
+}
+
+.calculator-form {
+  &__inputs-wrapper{
+    width: 100%;
+    align-items: flex-start;
+  }
+  &__content-wrapper {
+    padding: 1.25rem;
+  }
+  &__header {
+    margin-bottom: 1.875rem;
+  }
+  &__tab-link:hover {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #07becb;
+    color: #fff;
+  }
+  &__inputs-line {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      ul{
+        width: 100%;
+      }
+    }
+  }
+  &__result-title{
+    width: 35.4%;
+    margin-right: 1rem;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 1rem;
+      width: auto;
+    }
+  }
+  &__result-wrapper {
+    width: 50%;
+    min-width: 8.125rem;
+    text-align: center;
+    margin-right: 0.313em;
+    &.full-width {
+      width: 50%;
+      min-width: 8.125rem;
+      text-align: center;
+      .total {
+        width: 100%;
+      }
+      @media (max-width: $tablet-L) {
+        width: 65%;
+      }
+      @media (max-width: $tablet) {
+        width: auto;
+      }
+    }
+    @media (max-width: $tablet-L) {
+      width: 65%;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+    @media (max-width: $tablet-S) {
+      flex-direction: column;
+    }
+  }
+  &__result-input {
+    height: auto;
+    width: 25%;
+    min-width: 8.125rem;
+    padding: 0.75rem 1.625rem;
+    background: #eef2f4;
+    position: relative;
+    &.full-width {
+      width: calc(50% + 0.313em);
+      min-width: 16.6rem;
+      @media (max-width: $tablet-L) {
+        width: calc(100%);
+      }
+      @media (max-width: $tablet) {
+        width: 100%;
+      }
+      @media (max-width: $tablet-S) {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+    @media (max-width: $tablet-L) {
+      width: 50%;
+      margin-top: 1.2rem;
+    }
+    @media (max-width: $tablet) {
+      width: 48%;
+    }
+    @media (max-width: $tablet-S) {
+      width: 47%;
+      min-width: 47%;
+      padding: 0.75rem;
+    }
+    .mobile-comment{
+      display: none;
+      position: absolute;
+      top: -1.75rem;
+      left: 0;
+      @media (max-width: $tablet) {
+        display: block;
+        color: #828282;
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 100%;
+        margin: 0.625rem 0;
+      }
+    }
+  }
+  &__result {
+    min-width: 8.125rem;
+    margin-right: 0.313em;
+    text-align: center;
+    &.total {
+      width: 50%;
+      min-width: 8.125rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 100%;
+      letter-spacing: -0.03125em;
+      color: #07becb;
+      position: relative;
+      &::before {
+        content: '$';
+        margin-right: 0.3125em;
+        left: 0;
+      }
+
+      @media (max-width: $tablet-L) {
+        width: 100%;
+      }
+      @media (max-width: $tablet-S) {
+        text-align: left;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  &__content-top {
+    padding: 1.25rem 2.5rem;
+    align-items: center;
+    &.result-block {
+      width: 100%;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+    @media (max-width: $tablet-S) {
+      padding: 1.25rem 0.9375rem;
+      //margin-bottom: 0;
+    }
+  }
+  &__tabs {
+    background-color: #eef2f4;
+    margin-top: 0;
+    @media (max-width: $tablet) {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 0;
+      border-radius: 0;
+    }
+  }
+  &__tab-menu {
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 1.25rem 1.25rem 0;
+      border-bottom: none;
+    }
+  }
+  &__tab-link {
+    @media (max-width: $tablet) {
+      width: 100%;
+      height: auto;
+      background-color: #fff;
+      border-radius: 5px !important;
+      padding: 1.125rem !important;
+    }
+  }
+  &__list {
+    width: 35.4%;
+    margin-right: 1rem;
+  }
+  &__title {
+    width: 25%;
+    min-width: 9.5rem;
+    text-align: center;
+    &.name{
+      text-align: left;
+      width: 35.4%;
+      margin-right: 1rem;
+    }
+    @media (max-width: $tablet-L) {
+      width: 33%;
+    }
+  }
+  &__titles-wrapper{
+    padding: 0.5rem 2.5rem;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__list-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    height: auto;
+    border-bottom: none;
+    margin: 0;
+    @media (max-width: $tablet-S) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      &.result-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .name-result {
+          margin-bottom: 0;
+          margin-right: 0.9375rem;
+        }
+      }
+      .name-result {
+        margin-bottom: 0.9375rem;
+      }
+    }
+    &:last-child {
+      border: none;
+    }
+    .name-result {
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 100%;
+      letter-spacing: -0.03125em;
+      color: rgba(92, 92, 92, 0.6);
+      &.total {
+        font-weight: 600;
+        color: #232323;
+      }
+    }
+    .result {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 100%;
+      letter-spacing: -0.03125em;
+      color: #232323;
+    }
+  }
+  &__text-result-wrapper {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 2.5rem;
+    .text {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 200%;
+      letter-spacing: -0.03125em;
+      color: #232323;
+      p {
+        margin-bottom: 1.25rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .marker {
+          font-weight: 600;
+          position: relative;
+          &.percent {
+            &::after {
+              content: '%';
+              margin-left: 0.125rem;
+              right: 0;
+            }
+          }
+          &.currency {
+            &::before {
+              content: '$';
+              margin-right: 0.125rem;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      padding: 1.5rem;
+    }
+  }
+  @media (max-width: $tablet-S) {
+    .w-tab-link {
+      padding: 1.125rem 1.875rem;
+    }
+  }
+}
+
+.footer {
+  &__text {
+    text-align: center;
+  }
+}
+// form how-much calculator end
